@@ -1,0 +1,33 @@
+# ==============================================================================
+# REQUIREMENTS - Hand Sign Detection App
+# ==============================================================================
+
+# Core Framework
+kivy>=2.2.0
+
+# Image Processing
+pillow>=9.0.0
+
+# Cross-platform features (TTS, Camera permissions)
+plyer>=2.1.0
+
+# Scientific computing
+numpy>=1.21.0
+
+# Desktop TTS (not needed for Android)
+pyttsx3>=2.90; sys_platform == 'win32' or sys_platform == 'darwin' or sys_platform == 'linux'
+
+# Desktop-only: Full TensorFlow (for training)
+# tensorflow>=2.10.0
+
+# Desktop-only: MediaPipe (for accurate hand detection)
+# mediapipe>=0.9.0
+
+# Desktop-only: OpenCV
+# opencv-python>=4.5.0
+
+# ==============================================================================
+# For Android APK Building (install in Linux/WSL only):
+# ==============================================================================
+# buildozer>=1.5.0
+# cython>=0.29.32

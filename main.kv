@@ -1,0 +1,74 @@
+# main.kv
+
+"""
+This Kivy language file defines the user interface for the Hand Sign Detection app.
+
+It sets up the layout with a title, a camera view, a label for detected text,
+and control buttons. The design is kept clean and simple for a professional look.
+"""
+
+<MainLayout>:
+    orientation: 'vertical'
+    padding: '10dp'
+    spacing: '10dp'
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1  # White background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Label:
+        text: "Hand Sign Detection System"
+        size_hint_y: None
+        height: '48dp'
+        font_size: '24sp'
+        bold: True
+        color: 0, 0, 0, 1  # Dark text
+
+    Image:
+        id: camera_view
+        allow_stretch: True
+        keep_ratio: True
+
+    Label:
+        id: detected_text_label
+        text: "Detected Text: "
+        size_hint_y: None
+        height: '48dp'
+        font_size: '20sp'
+        color: 0.2, 0.2, 0.2, 1
+
+    BoxLayout:
+        size_hint_y: None
+        height: '60dp'
+        spacing: '10dp'
+
+        Button:
+            text: "▶ Start Camera"
+            on_press: root.start_camera()
+            background_color: 0.2, 0.6, 0.2, 1  # Green
+            color: 1, 1, 1, 1
+
+        Button:
+            text: "⏹ Stop Camera"
+            on_press: root.stop_camera()
+            background_color: 0.8, 0.2, 0.2, 1  # Red
+            color: 1, 1, 1, 1
+
+    BoxLayout:
+        size_hint_y: None
+        height: '60dp'
+        spacing: '10dp'
+
+        Button:
+            text: "🔊 Speak Output"
+            on_press: root.speak_text()
+            background_color: 0.2, 0.4, 0.8, 1  # Blue
+            color: 1, 1, 1, 1
+
+        Button:
+            text: "❌ Clear Text"
+            on_press: root.clear_text()
+            background_color: 0.9, 0.5, 0.1, 1  # Orange
+            color: 1, 1, 1, 1
